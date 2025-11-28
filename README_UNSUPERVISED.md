@@ -5,7 +5,7 @@ Se desea desarrollar un modelo de scoring crediticio mediante técnicas de apren
 * **Archivo:** `application_.parquet`
 * Obteniendo una dimensión de **307.511 filas** y **122 columnas**.
 
-De el conjunto total, fueron seleccionadas **14 variables claves** que representan las dimensiones financieras, demográficas y de comportamento, además la variable objetivo (`TARGET`) u otras como el id, no fueron seleccionadas para no sesgar el agrupamiento. Entonces las variables utilizadas fueron:
+De el conjunto total, fueron seleccionadas **12 variables claves** que representan las dimensiones financieras, demográficas y de comportamento, además la variable objetivo (`TARGET`) u otras como el id, no fueron seleccionadas para no sesgar el agrupamiento. Entonces las variables utilizadas fueron:
 
 * 'AMT_INCOME_TOTAL'
 * 'AMT_CREDIT'
@@ -28,7 +28,7 @@ De los algoritmos disponibles sugeridos para el EA3 (Clustering, Detección de A
 
 ## 3. Metodología y preprocesamiento
 Para preparar los datos, se aplicó el siguiente flujo:
-1.  **Selección de Características:** Se redujo la dimensionalidad a una matriz de **(307511, 14)**.
+1.  **Selección de Características:** Se redujo la dimensionalidad a una matriz de **(307511, 12)**.
 2.  **Imputación:** Se rellenaron los valores nulos utilizando la mediana para mantener la robustez ante outliers.
 3.  **Escalado:** Se aplicó `StandardScaler` para normalizar todas las variables.
 
@@ -40,9 +40,9 @@ Se cruzaron los clusters resultantes con la variable `TARGET` (tasa de morosidad
 
 | Cluster | Cantidad de Clientes | Tasa de Incumplimiento (Riesgo) | Perfil Identificado |
 | :--- | :--- | :--- | :--- |
-| **1** | 72,516 | **9.84% (Alto)** | **Jóvenes Vulnerables:** Grupo más joven (36 años aprox.) y con mayor cantidad de hijos promedio (1.47), que poseen la tasa de mora más alta. |
-| **2** | 161,262 | **8.45% (Medio)** | **Masivo Bajos Ingresos:** El grupo más grande. Tienen los ingresos ($143.000 aprox.) y montos de crédito más bajos. |
-| **0** | 73,733 | **5.52% (Bajo)** | **Clientes Consolidados:** Grupo de mayor edad y estabilidad, con los ingresos más altos ($233.000 aprox.) y solicitan créditos altos ($1.100.000 aprox.).|
+| **1** | 72.691 | **9,8% (Alto)** | **Jóvenes Vulnerables:** Grupo más joven (36 años aprox.) y con mayor cantidad de hijos promedio (1.47), que poseen la tasa de mora más alta. |
+| **2** | 161.664 | **8,4% (Medio)** | **Masivo Bajos Ingresos:** El grupo más grande. Tienen los ingresos ($144.000 aprox.) y montos de crédito más bajos. |
+| **0** | 73.156 | **5,7% (Bajo)** | **Clientes Consolidados:** Grupo de edad parecida al cluster 2 pero con estabilidad, con los ingresos más altos ($230.000 aprox.) y solicitan créditos altos ($1.140.000 aprox.).|
 
 
 Podemos notar que existe una diferencia de casi el doble entre el riesgo del Cluster 0 y el Cluster 1, también se puede decir que el grupo del Cluster 0 es el más seguro.
