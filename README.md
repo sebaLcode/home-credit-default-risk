@@ -7,5 +7,5 @@
 
 ## Resumen del trabajo
 
-Se selecciono el algoritmo de Clustering (K-Means), para segmentar clientes.
-**[Clic para ver un análisis detallado y sus resultados](./README_UNSUPERVISED.md)**
+Se seleccionó el algoritmo de Clustering (K-Means), para segmentar clientes.
+**[Clic para ver el análisis detallado y sus resultados (README_UNSUPERVISED)](./README_UNSUPERVISED.md)**
