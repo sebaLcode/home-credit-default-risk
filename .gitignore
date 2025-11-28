@@ -1,0 +1,3 @@
+#Ignoramos los archivos temporales de python y notebooks
+__pycache__/
+.ipynb_checkpoints/
